@@ -1,0 +1,152 @@
+.quiz-page {
+    padding: 50px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.timer {
+    font-size: 24px;
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+.question-card {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.question-text {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #2c3e50;
+    min-height: 100px;
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.btn-found,
+.btn-not-found {
+    padding: 15px 40px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: bold;
+}
+
+.btn-found {
+    background-color: #27ae60;
+    color: white;
+}
+
+.btn-found:hover {
+    background-color: #229954;
+    transform: scale(1.05);
+}
+
+.btn-not-found {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.btn-not-found:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+}
+
+.result-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+}
+
+.result-card {
+    background: white;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    min-width: 400px;
+}
+
+.score {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #34495e;
+}
+
+.percentage {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: #2c3e50;
+}
+
+.failed {
+    color: #27ae60;
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.not-passed {
+    color: #e74c3c;
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.result-card button {
+    padding: 12px 30px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.result-card button:hover {
+    background-color: #2980b9;
+}
+
+
+
+
+
+
+
+
+
+
+
+.passed-status {
+    color: #27ae60;
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.failed-status {
+    color: #e74c3c;
+    font-size: 36px;
+    margin-bottom: 30px;
+}

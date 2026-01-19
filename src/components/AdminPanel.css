@@ -1,0 +1,366 @@
+/* .admin-panel {
+    padding: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.admin-panel h1 {
+    margin-bottom: 30px;
+    color: #2c3e50;
+}
+
+.admin-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+}
+
+.categories-section,
+.questions-section {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.create-category {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.create-category input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.create-category button,
+.add-question button {
+    padding: 10px 20px;
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.create-category button:hover,
+.add-question button:hover {
+    background-color: #229954;
+}
+
+.categories-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.category-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    background-color: #ecf0f1;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.category-item:hover {
+    background-color: #d5dbdb;
+}
+
+.category-item.active {
+    background-color: #3498db;
+    color: white;
+}
+
+.category-item button {
+    padding: 5px 15px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.category-item button:hover {
+    background-color: #c0392b;
+}
+
+.add-question {
+    margin-bottom: 20px;
+}
+
+.add-question textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+.questions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.question-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    background-color: #f8f9fa;
+    border-left: 4px solid #3498db;
+    border-radius: 5px;
+}
+
+.question-item button {
+    padding: 5px 15px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.select-prompt {
+    text-align: center;
+    color: #7f8c8d;
+    padding: 50px;
+    font-size: 18px;
+} */
+
+
+
+
+
+
+
+
+
+/* AdminPanel.css */
+.admin-panel {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    width: 100%;
+}
+
+.admin-panel h1 {
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+/* Admin Tabs */
+.admin-tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.admin-tabs button {
+    padding: 0.75rem 1.5rem;
+    background: transparent;
+    border: none;
+    border-bottom: 3px solid transparent;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-light);
+    margin-bottom: -2px;
+    transition: all 0.2s;
+}
+
+.admin-tabs button:hover {
+    color: var(--primary-color);
+    background-color: rgba(79, 70, 229, 0.05);
+}
+
+.admin-tabs button.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+
+/* Admin Container Layout */
+.admin-container {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+/* Sections Styling */
+.categories-section,
+.questions-section,
+.teachers-section {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e5e7eb;
+}
+
+/* Specific Widths */
+.categories-section {
+    flex: 1;
+    /* 1/3 width */
+    min-width: 300px;
+}
+
+.questions-section {
+    flex: 2;
+    /* 2/3 width */
+}
+
+.teachers-section {
+    width: 100%;
+    /* Full width for teachers tab */
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 1.25rem;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+/* Form Inputs & Buttons */
+.create-category,
+.add-question,
+.create-teacher {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.create-teacher {
+    flex-wrap: wrap;
+    /* Teachers form wraps on small screens */
+}
+
+input[type="text"],
+input[type="password"] {
+    flex: 1;
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+button {
+    padding: 0.75rem 1.25rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+button:hover {
+    background-color: var(--primary-hover);
+}
+
+/* Lists Styling */
+.categories-list,
+.questions-list,
+.teachers-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.category-item,
+.question-item,
+.teacher-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #f9fafb;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    transition: all 0.2s;
+}
+
+.category-item span {
+    cursor: pointer;
+    flex: 1;
+    font-weight: 500;
+}
+
+.category-item:hover {
+    background-color: #f3f4f6;
+    border-color: #d1d5db;
+}
+
+.category-item.active {
+    background-color: #e0e7ff;
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.question-item span,
+.teacher-item span {
+    flex: 1;
+    margin-right: 1rem;
+}
+
+/* Delete Buttons inside lists */
+.category-item button,
+.question-item button,
+.teacher-item button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+    background-color: #fee2e2;
+    color: var(--danger-color);
+    border-radius: 6px;
+}
+
+.category-item button:hover,
+.question-item button:hover,
+.teacher-item button:hover {
+    background-color: var(--danger-color);
+    color: white;
+}
+
+/* Responsive Layout */
+@media (max-width: 900px) {
+    .admin-container {
+        flex-direction: column;
+    }
+
+    .categories-section,
+    .questions-section {
+        width: 100%;
+        flex: none;
+    }
+
+    .create-teacher {
+        flex-direction: column;
+    }
+
+    .create-teacher button {
+        width: 100%;
+    }
+}

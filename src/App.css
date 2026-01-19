@@ -1,0 +1,146 @@
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+}
+
+.App {
+  min-height: 100vh;
+}
+
+.navbar {
+  background-color: #2c3e50;
+  padding: 15px 30px;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 8px 16px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.navbar a:hover {
+  background-color: #34495e;
+} */
+
+
+
+
+
+
+
+
+
+
+
+/* App.css */
+:root {
+  --primary-color: #4f46e5;
+  --primary-hover: #4338ca;
+  --bg-color: #f3f4f6;
+  --text-dark: #111827;
+  --text-light: #6b7280;
+  --danger-color: #ef4444;
+  --white: #ffffff;
+  --nav-bg: #1f2937;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-dark);
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: var(--nav-bg);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.navbar a {
+  color: #e5e7eb;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+
+.navbar a:hover {
+  color: var(--white);
+}
+
+.teacher-name {
+  color: #9ca3af;
+  font-size: 0.9rem;
+  padding-left: 1rem;
+  border-left: 1px solid #374151;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logout-btn {
+  background-color: transparent;
+  color: #f87171;
+  border: 1px solid #f87171;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.logout-btn:hover {
+  background-color: #f87171;
+  color: white;
+}
+
+/* Mobile Responsive Navbar */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .nav-left {
+    flex-direction: column;
+    gap: 0.8rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .teacher-name {
+    border-left: none;
+    padding-left: 0;
+  }
+}
