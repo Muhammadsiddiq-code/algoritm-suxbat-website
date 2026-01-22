@@ -16,3 +16,26 @@ button {
   cursor: pointer;
   font-family: inherit;
 }
+
+
+
+
+
+
+
+:root {
+  --bg-dark: #121212;
+  /* Asosiy qora fon */
+  --bg-card: #1E1E1E;
+  /* Kartalar foni */
+  --bg-input: #2D2D2D;
+  /* Inputlar foni */
+  --primary-orange: #FF8C00;
+  /* Asosiy to'q sariq rang */
+  --text-white: #FFFFFF;
+  /* Oq matn */
+  --text-grey: #B0B0B0;
+  /* Kulrang matn */
+  --danger: #FF4444;
+  /* O'chirish rangi */
+}

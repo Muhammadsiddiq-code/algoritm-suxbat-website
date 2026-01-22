@@ -43,104 +43,167 @@ body {
 
 
 
-/* App.css */
+/* Global Reset */
 :root {
-  --primary-color: #4f46e5;
-  --primary-hover: #4338ca;
-  --bg-color: #f3f4f6;
-  --text-dark: #111827;
-  --text-light: #6b7280;
-  --danger-color: #ef4444;
-  --white: #ffffff;
-  --nav-bg: #1f2937;
+  --bg-dark: #121212;
+  --bg-sidebar: #1a1a1a;
+  --bg-hover: #2d2d2d;
+  --primary-orange: #FF8C00;
+  --text-white: #ffffff;
+  --text-grey: #b0b0b0;
+  --border-color: #333;
 }
 
 body {
   margin: 0;
+  padding: 0;
+  background-color: var(--bg-dark);
+  color: var(--text-white);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--bg-color);
-  color: var(--text-dark);
+  overflow: hidden;
+  /* Sahifa umumiy scroll bo'lmasligi uchun */
 }
 
-.App {
-  min-height: 100vh;
+/* App Layout - Flexbox orqali 2 ga bo'lamiz */
+.app-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+/* 1. Sidebar Styles (Chap taraf) */
+.app-sidebar {
+  width: 260px;
+  /* Sidebar kengligi */
+  background-color: var(--bg-sidebar);
+  border-right: 1px solid var(--border-color);
   display: flex;
   flex-direction: column;
+  flex-shrink: 0;
+  /* Sidebar qisqarib ketmasligi uchun */
+  transition: all 0.3s ease;
+  z-index: 100;
 }
 
-/* Navbar Styles */
-.navbar {
-  background-color: var(--nav-bg);
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+.sidebar-header {
+  padding: 30px 20px;
+  border-bottom: 1px solid var(--border-color);
 }
 
-.nav-left {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-.navbar a {
-  color: #e5e7eb;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 1rem;
-  transition: color 0.2s;
-}
-
-.navbar a:hover {
-  color: var(--white);
+.sidebar-header h2 {
+  color: var(--primary-orange);
+  margin: 0;
+  font-size: 24px;
 }
 
 .teacher-name {
-  color: #9ca3af;
-  font-size: 0.9rem;
-  padding-left: 1rem;
-  border-left: 1px solid #374151;
+  color: var(--text-grey);
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+.sidebar-menu {
+  padding: 20px 10px;
+  flex: 1;
+  /* O'rtadagi bo'sh joyni egallaydi */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.menu-item {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  padding: 12px 20px;
+  background: transparent;
+  border: none;
+  color: var(--text-grey);
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.menu-item .icon {
+  margin-right: 12px;
+  font-size: 18px;
+}
+
+.menu-item:hover {
+  background-color: var(--bg-hover);
+  color: var(--text-white);
+  transform: translateX(5px);
+}
+
+.menu-item.active {
+  background-color: var(--primary-orange);
+  color: #fff;
+  /* Oq matn */
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3);
+}
+
+.sidebar-footer {
+  padding: 20px;
+  border-top: 1px solid var(--border-color);
 }
 
 .logout-btn {
+  width: 100%;
+  padding: 12px;
   background-color: transparent;
-  color: #f87171;
-  border: 1px solid #f87171;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  font-weight: 600;
-  transition: all 0.2s;
+  border: 1px solid #ff4444;
+  color: #ff4444;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
 }
 
 .logout-btn:hover {
-  background-color: #f87171;
+  background-color: #ff4444;
   color: white;
 }
 
-/* Mobile Responsive Navbar */
-@media (max-width: 600px) {
-  .navbar {
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1rem;
-  }
+/* 2. Main Content Styles (O'ng taraf) */
+.main-content {
+  flex: 1;
+  /* Qolgan barcha joyni egallaydi */
+  height: 100vh;
+  overflow-y: auto;
+  /* Faqat o'ng tomon scroll bo'ladi */
+  background-color: var(--bg-dark);
+  position: relative;
+}
 
-  .nav-left {
-    flex-direction: column;
-    gap: 0.8rem;
-    width: 100%;
-    text-align: center;
-  }
+/* Login sahifasi uchun maxsus (Sidebar yo'q paytda) */
+.full-content {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bg-dark);
+  overflow-y: auto;
+}
 
-  .teacher-name {
-    border-left: none;
-    padding-left: 0;
-  }
+/* Scrollbar dizayni */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-orange);
 }

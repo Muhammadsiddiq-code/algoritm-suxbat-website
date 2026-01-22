@@ -1,0 +1,824 @@
+/* .student-profile {
+    padding: 40px;
+    max-width: 1600px;
+    margin: 0 auto;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.profile-header {
+    margin-bottom: 40px;
+}
+
+.back-btn {
+    padding: 10px 20px;
+    background: white;
+    color: #000000;
+    border: transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 30px;
+    margin-bottom: 20px;
+    transition: all 0.3s;
+}
+
+.back-btn:hover {
+    background: orange;
+    color: white;
+    transform: translateX(-5px);
+}
+
+.profile-banner {
+    background: linear-gradient(135deg, rgb(255, 153, 0) 0%, orange  100%);
+    padding: 40px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    color: white;
+    box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
+    position: relative;
+}
+
+.profile-avatar {
+    width: 100px;
+    height: 100px;
+    background: white;
+    color: #001;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    font-weight: 900;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.profile-info h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.group-name {
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+.new-interview-btn {
+    padding: 15px 30px;
+    background: white;
+    color: #000000;
+    border: none;
+    border-radius: 25px;
+    font-size: 25px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.new-interview-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.statistics-section {
+    margin-bottom: 40px;
+}
+
+.statistics-section h2 {
+        color: #ccd;
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.stat-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s;
+    border-left: 5px solid;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.stat-card.total {
+    border-left-color: #3498db;
+}
+
+.stat-card.passed {
+    border-left-color: #27ae60;
+}
+
+.stat-card.failed {
+    border-left-color: #e74c3c;
+}
+
+.stat-card.average {
+    border-left-color: #f39c12;
+}
+
+.stat-icon {
+    font-size: 48px;
+}
+
+.stat-content {
+    flex: 1;
+}
+
+.stat-label {
+    color: #7f8c8d;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 8px; 
+}
+
+.stat-value {
+    color: #2c3e50;
+    font-size: 36px;
+    font-weight: 900;
+}
+
+.interviews-history h2 {
+    color: #ccd;
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+.no-interviews {
+    background: white;
+    padding: 80px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.empty-icon {
+    font-size: 80px;
+    margin-bottom: 20px;
+}
+
+.no-interviews h3 {
+    color: #2c3e50;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.no-interviews p {
+    color: #95a5a6;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.start-btn {
+    padding: 15px 40px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.start-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.interviews-table-wrapper {
+    background: rgb(45, 46, 46);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    overflow-x: auto;
+}
+
+.interviews-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.interviews-table th,
+.interviews-table td {
+    padding: 18px;
+    text-align: left;
+    border-bottom: 1px solid #ecf0f1;
+}
+
+.interviews-table th {
+    background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.interviews-table tbody tr {
+    transition: all 0.3s;
+}
+
+.interviews-table tbody tr:hover {
+    background-color: #f8f9fa;
+    transform: scale(1.01);
+}
+
+.category-name {
+    font-weight: 600;
+    color: #667eea;
+}
+
+.score-badge {
+    background-color: #ecf0f1;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 14px;
+    color: #34495e;
+}
+
+.percentage {
+    font-weight: 700;
+    font-size: 16px;
+    color: #667eea;
+}
+
+.interviews-table .status {
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.interviews-table .status.passed {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.interviews-table .status.failed {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.date {
+    color: #7f8c8d;
+    font-size: 14px;
+}
+
+.error-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 100px);
+    gap: 20px;
+}
+
+.error-screen h2 {
+    color: #e74c3c;
+    font-size: 28px;
+}
+
+.error-screen button {
+    padding: 12px 30px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .profile-banner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .interviews-table-wrapper {
+        overflow-x: scroll;
+    }
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* StudentProfile.css */
+
+/* --- RANGLAR PALITRASI --- */
+:root {
+    --main-bg: #000000;
+    /* Asosiy fon - Qora */
+    --card-bg: #121212;
+    /* Karta foni - Yumshoq qora */
+    --accent-orange: #ff6b00;
+    /* Sabzi rang */
+    --accent-orange-hover: #e65100;
+    /* To'qroq sabzi rang (hover uchun) */
+    --text-white: #ffffff;
+    /* Asosiy matn */
+    --text-grey: #b0b0b0;
+    /* Ikkilamchi matn */
+
+    --success: #00c851;
+    --danger: #ff4444;
+
+    --radius: 12px;
+    --shadow: 0 4px 20px rgba(255, 107, 0, 0.15);
+    /* Sabzi rangli yengil soya */
+}
+
+/* --- UMUMIY SOZLAMALAR --- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--main-bg);
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    color: var(--text-white);
+    margin: 0;
+}
+
+.student-profile {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* --- LOADING & ERROR --- */
+.loading-screen,
+.error-screen {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-white);
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid #333;
+    border-top-color: var(--accent-orange);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.error-screen button {
+    background: var(--accent-orange);
+    color: var(--text-white);
+    border: none;
+    padding: 10px 20px;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* --- HEADER --- */
+.profile-header {
+    margin-bottom: 30px;
+}
+
+/* .back-btn {
+    background: #ccd;
+    border: none;
+    font-size: 32px;
+    color: var(--text-white);
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: color 0.3s;
+    padding: 0;
+}
+
+.back-btn:hover {
+    color: var(--accent-orange);
+} */
+
+
+
+.back-btn {
+    padding: 10px 20px;
+    background: var(--card-bg);
+    color: var(--accent-orange);
+    border: 2px solid var(--accent-orange);
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 30px;
+    margin-bottom: 20px;
+    transition: all 0.3s;
+}
+
+.back-btn:hover {
+    background: orange;
+    color: white;
+    transform: translateX(-5px);
+}
+
+
+
+.profile-banner {
+    background-color: var(--card-bg);
+    border: 1px solid #333;
+    border-left: 5px solid var(--accent-orange);
+    border-radius: var(--radius);
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: var(--shadow);
+}
+
+.profile-avatar {
+    width: 80px;
+    height: 80px;
+    background-color: transparent;
+    border: 2px solid var(--accent-orange);
+    color: var(--accent-orange);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    font-weight: bold;
+    margin-right: 20px;
+    box-shadow: 0 0 15px rgba(255, 107, 0, 0.2);
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.profile-info h1 {
+    margin: 0;
+    font-size: 26px;
+    color: var(--text-white);
+}
+
+.group-name {
+    margin: 5px 0 0;
+    color: var(--text-grey);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.new-interview-btn {
+    background-color: var(--accent-orange);
+    color: var(--text-white);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(255, 107, 0, 0.4);
+}
+
+.new-interview-btn:hover {
+    background-color: var(--accent-orange-hover);
+    transform: translateY(-2px);
+}
+
+/* --- STATISTIKA --- */
+.statistics-section {
+    margin-bottom: 40px;
+}
+
+.statistics-section h2,
+.interviews-history h2 {
+    font-size: 20px;
+    color: var(--accent-orange);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.stat-card {
+    background: var(--card-bg);
+    border: 1px solid #333;
+    padding: 20px;
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-orange);
+}
+
+.stat-icon {
+    min-width: 50px;
+    min-height: 50px;
+    background-color: rgba(255, 107, 0, 0.1);
+    /* Juda xira sabzi rang fon */
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+/* Ikonkalarni majburan sabzi rang qilish */
+.stat-icon svg {
+    color: var(--accent-orange) !important;
+    fill: var(--accent-orange) !important;
+}
+
+.stat-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: var(--text-grey);
+    margin-bottom: 5px;
+}
+
+.stat-value {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--text-white);
+}
+
+/* --- TARIX JADVALI --- */
+.interviews-history {
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: var(--radius);
+    border: 1px solid #333;
+}
+
+.no-interviews {
+    text-align: center;
+    padding: 40px;
+    color: var(--text-grey);
+}
+
+.start-btn {
+    background: var(--accent-orange);
+    color: var(--text-white);
+    border: none;
+    padding: 10px 25px;
+    border-radius: var(--radius);
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.interviews-table-wrapper {
+    overflow-x: auto;
+}
+
+.interviews-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 700px;
+}
+
+.interviews-table th {
+    background-color: #000;
+    color: var(--accent-orange);
+    text-align: left;
+    padding: 15px;
+    font-weight: 600;
+    border-bottom: 2px solid #333;
+}
+
+.interviews-table td {
+    padding: 15px;
+    border-bottom: 1px solid #222;
+    color: var(--text-white);
+}
+
+.interviews-table tr:hover {
+    background-color: rgba(255, 107, 0, 0.05);
+    /* Hoverda juda xira sabzi effekt */
+}
+
+.category-name {
+    color: var(--accent-orange);
+    font-weight: 500;
+}
+
+.score-badge {
+    background: #222;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    border: 1px solid #444;
+}
+
+/* Statuslar (Passed/Failed) */
+.status {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.status.passed {
+    background: rgba(0, 200, 81, 0.1);
+    color: var(--success);
+    border: 1px solid var(--success);
+}
+
+.status.failed {
+    background: rgba(255, 68, 68, 0.1);
+    color: var(--danger);
+    border: 1px solid var(--danger);
+}
+
+.date {
+    color: var(--text-grey);
+    font-size: 13px;
+}
+
+/* --- MOBILE RESPONSIVE (Telefonda faqat ikonka va raqam) --- */
+@media (max-width: 768px) {
+    .student-profile {
+        padding: 10px;
+    }
+
+    /* 1. Header */
+    .profile-banner {
+        flex-direction: column;
+        text-align: center;
+        position: relative;
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .profile-info {
+        width: 100%;
+    }
+
+    .group-name {
+        justify-content: center;
+    }
+
+    /* 2. Tugma (New Interview) - Faqat dumaloq ikonka */
+    .new-interview-btn {
+        font-size: 0;
+        /* Matn yo'qoladi */
+        padding: 0;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        justify-content: center;
+        position: absolute;
+        /* Tepaga joylash */
+        top: 15px;
+        right: 15px;
+    }
+
+    .new-interview-btn svg {
+        font-size: 24px;
+        /* Ikonka kattalashadi */
+    }
+
+    /* Avatar chap tomonga siljiydi */
+    .profile-avatar {
+        margin: 0;
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+
+    .profile-info {
+        margin-top: 40px;
+        /* Avatar va tugma ustiga chiqib ketmasligi uchun */
+    }
+
+    /* 3. Statistika - Matnsiz */
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 qator */
+        gap: 10px;
+    }
+
+    .stat-card {
+        flex-direction: column;
+        padding: 15px 10px;
+        gap: 5px;
+        text-align: center;
+    }
+
+    /* "Jami suhbatlar" kabi yozuvlar yashirinadi */
+    .stat-label {
+        display: none;
+    }
+
+    /* Ikonka biroz kichrayadi */
+    .stat-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+        background: transparent;
+        /* Fonni olib tashlaymiz mobil uchun */
+    }
+
+    .stat-value {
+        font-size: 20px;
+    }
+
+    /* 4. Tarix bo'limi */
+    .interviews-history {
+        padding: 15px;
+    }
+
+    /* Sarlavhani kichraytirish yoki yashirish */
+    .interviews-history h2 {
+        font-size: 16px;
+    }
+
+    .interviews-table th,
+    .interviews-table td {
+        padding: 10px 5px;
+        font-size: 12px;
+    }
+}

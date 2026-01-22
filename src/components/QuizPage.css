@@ -1,4 +1,4 @@
-.quiz-page {
+/* .quiz-page {
     padding: 50px;
     max-width: 800px;
     margin: 0 auto;
@@ -149,4 +149,339 @@
     color: #e74c3c;
     font-size: 36px;
     margin-bottom: 30px;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* QuizPage.css */
+
+/* --- RANGLAR PALITRASI --- */
+:root {
+    --main-bg: #000000;
+    --card-bg: #121212;
+    --accent-orange: #ff6b00;
+    --text-white: #ffffff;
+    --text-grey: #b0b0b0;
+
+    --success-color: #00c851;
+    /* Yashil (Topdi) */
+    --danger-color: #ff4444;
+    /* Qizil (Topa olmadi) */
+
+    --radius: 16px;
+    --shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    --glow-orange: 0 0 20px rgba(255, 107, 0, 0.2);
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--main-bg);
+    color: var(--text-white);
+}
+
+/* --- ASOSIY SAHIFA --- */
+.quiz-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+}
+
+/* Yuklanmoqda yozuvi */
+.quiz-page p {
+    font-size: 18px;
+    color: var(--accent-orange);
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.5;
+    }
+}
+
+/* --- QUIZ HEADER (Savol raqami va Vaqt) --- */
+.quiz-header {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 0 10px;
+}
+
+.quiz-header h2 {
+    font-size: 18px;
+    margin: 0;
+    color: var(--text-grey);
+    background: var(--card-bg);
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: 1px solid #333;
+}
+
+/* Timer dizayni */
+.timer {
+    font-family: 'Courier New', Courier, monospace;
+    /* Raqamli soat stili */
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--accent-orange);
+    background-color: rgba(255, 107, 0, 0.1);
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: 1px solid var(--accent-orange);
+    box-shadow: var(--glow-orange);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* --- SAVOL KARTASI --- */
+.question-card {
+    background-color: var(--card-bg);
+    width: 100%;
+    max-width: 600px;
+    padding: 40px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border-top: 5px solid var(--accent-orange);
+    /* Tepasida sabzi rang chiziq */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 300px;
+    /* Minimal balandlik */
+}
+
+.question-text {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--text-white);
+    margin-bottom: 40px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- TUGMALAR --- */
+.buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.buttons button {
+    padding: 18px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s, filter 0.2s;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.buttons button:active {
+    transform: scale(0.95);
+}
+
+.btn-found {
+    background: linear-gradient(135deg, #00c851, #007e33);
+    box-shadow: 0 4px 15px rgba(0, 200, 81, 0.4);
+}
+
+.btn-found:hover {
+    filter: brightness(1.1);
+}
+
+.btn-not-found {
+    background: linear-gradient(135deg, #ff4444, #cc0000);
+    box-shadow: 0 4px 15px rgba(255, 68, 68, 0.4);
+}
+
+.btn-not-found:hover {
+    filter: brightness(1.1);
+}
+
+/* --- NATIJA SAHIFASI (RESULT PAGE) --- */
+.result-page {
+    background-color: var(--main-bg);
+}
+
+.result-page h1 {
+    color: var(--accent-orange);
+    font-size: 36px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.result-card {
+    background-color: var(--card-bg);
+    padding: 50px;
+    border-radius: var(--radius);
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: var(--shadow);
+    border: 1px solid #333;
+}
+
+.score {
+    font-size: 24px;
+    color: var(--text-grey);
+    margin-bottom: 10px;
+}
+
+.percentage {
+    font-size: 60px;
+    font-weight: 800;
+    margin: 10px 0;
+    color: var(--text-white);
+}
+
+/* Status ranglari */
+.passed-status {
+    color: var(--success-color);
+    font-size: 24px;
+    margin-bottom: 30px;
+    padding: 10px;
+    background: rgba(0, 200, 81, 0.1);
+    border-radius: 10px;
+}
+
+.failed-status {
+    color: var(--danger-color);
+    font-size: 24px;
+    margin-bottom: 30px;
+    padding: 10px;
+    background: rgba(255, 68, 68, 0.1);
+    border-radius: 10px;
+}
+
+.result-card button {
+    background-color: var(--text-white);
+    color: var(--main-bg);
+    border: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.result-card button:hover {
+    background-color: var(--accent-orange);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: var(--glow-orange);
+}
+
+/* --- MOBILE RESPONSIVE --- */
+@media (max-width: 768px) {
+    .quiz-page {
+        padding: 15px;
+        justify-content: flex-start;
+        /* Mobil versiyada teparoqdan boshlanadi */
+        padding-top: 40px;
+    }
+
+    /* Header joylashuvi */
+    .quiz-header {
+        margin-bottom: 20px;
+        flex-direction: row;
+        /* Yonma-yon qolaversin */
+    }
+
+    .quiz-header h2 {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
+    .timer {
+        font-size: 16px;
+        padding: 8px 15px;
+    }
+
+    /* Karta o'lchamlari */
+    .question-card {
+        padding: 25px;
+        min-height: auto;
+        /* Balandlik avtomatik moslashsin */
+    }
+
+    .question-text {
+        font-size: 20px;
+        /* Matnni sal kichraytiramiz */
+        margin-bottom: 30px;
+        min-height: 120px;
+        /* Matn uchun joy */
+    }
+
+    /* Tugmalar ustma-ust */
+    .buttons {
+        grid-template-columns: 1fr;
+        /* Bir qator */
+        gap: 15px;
+    }
+
+    .buttons button {
+        padding: 15px;
+        font-size: 16px;
+    }
+
+    /* Natija sahifasi */
+    .percentage {
+        font-size: 48px;
+    }
+}
+
+/* Juda kichik telefonlar uchun */
+@media (max-height: 600px) {
+    .quiz-page {
+        padding-top: 10px;
+    }
+
+    .question-text {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
 }

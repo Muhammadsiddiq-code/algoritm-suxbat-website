@@ -1,0 +1,709 @@
+/* .groups-management {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+    padding: 40px;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.groups-section,
+.students-section {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.groups-section h2,
+.students-section h2 {
+    color: #2c3e50;
+    margin-bottom: 25px;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.create-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.create-group input {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.create-group input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.create-group button {
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.create-group button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.groups-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #ecf0f1 100%);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 2px solid transparent;
+}
+
+.group-item:hover {
+    transform: translateX(5px);
+    border-color: #667eea;
+}
+
+.group-item.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    transform: translateX(5px);
+}
+
+.group-item>div {
+    flex: 1;
+}
+
+.group-item h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.group-item p {
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+.group-item .delete-btn {
+    padding: 8px 12px;
+    background-color: rgba(231, 76, 60, 0.1);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.3s;
+}
+
+.group-item .delete-btn:hover {
+    background-color: #e74c3c;
+    transform: scale(1.1);
+}
+
+.group-item.active .delete-btn {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.add-student {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.add-student input {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.add-student input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.add-student button {
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.add-student button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(39, 174, 96, 0.4);
+}
+
+.students-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.student-card {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ecf0f1 100%);
+    padding: 25px;
+    border-radius: 12px;
+    border: 2px solid #e0e0e0;
+    transition: all 0.3s;
+}
+
+.student-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border-color: #667eea;
+}
+
+.student-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #ddd;
+}
+
+.student-header h3 {
+    color: #2c3e50;
+    font-size: 18px;
+}
+
+.profile-btn {
+    padding: 8px 15px;
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.profile-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
+}
+
+.student-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.student-stats .stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background: white;
+    border-radius: 8px;
+}
+
+.student-stats .label {
+    font-size: 11px;
+    color: #7f8c8d;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.student-stats .value {
+    font-size: 22px;
+    font-weight: 800;
+    color: #2c3e50;
+}
+
+.student-stats .value.passed {
+    color: #27ae60;
+}
+
+.student-stats .value.failed {
+    color: #e74c3c;
+}
+
+.student-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.interview-btn {
+    flex: 1;
+    padding: 12px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.interview-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.delete-student-btn {
+    padding: 12px 15px;
+    background-color: rgba(231, 76, 60, 0.1);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.3s;
+}
+
+.delete-student-btn:hover {
+    background-color: #e74c3c;
+    color: white;
+    transform: scale(1.05);
+}
+
+.select-prompt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    text-align: center;
+}
+
+.prompt-icon {
+    font-size: 80px;
+    margin-bottom: 20px;
+    animation: pointLeft 1.5s infinite;
+}
+
+@keyframes pointLeft {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(-10px);
+    }
+}
+
+.select-prompt h3 {
+    color: #2c3e50;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.select-prompt p {
+    color: #95a5a6;
+    font-size: 16px;
+}
+
+.no-data {
+    text-align: center;
+    color: #95a5a6;
+    padding: 40px;
+    font-size: 16px;
+}
+
+@media (max-width: 1200px) {
+    .groups-management {
+        grid-template-columns: 1fr;
+    }
+
+    .students-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Layout */
+.groups-management-layout {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    height: 100vh;
+    background-color: #121212;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+}
+
+/* Sidebar Styling */
+.sidebar-section {
+    background-color: #1a1a1a;
+    border-right: 1px solid #333;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.section-header h2 {
+    font-size: 1.5rem;
+    color: #FF8C00;
+    margin: 0;
+}
+
+.badge {
+    background: #333;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    color: orange;
+}
+
+/* Inputs & Buttons Shared */
+.input-wrapper,
+.add-student-wrapper {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input {
+    background: #2D2D2D;
+    border: 1px solid #404040;
+    color: white;
+    padding: 12px 15px;
+    border-radius: 8px;
+    width: 100%;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: #FF8C00;
+}
+
+.add-btn {
+    background: #FF8C00;
+    border: none;
+    color: white;
+    width: 50px;
+    border-radius: 8px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.add-btn:hover {
+    background: #ff9f2e;
+}
+
+/* Group List */
+.list-container {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.list-item {
+    background: #242424;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    border-left: 4px solid transparent;
+}
+
+.list-item:hover {
+    background: #2a2a2a;
+}
+
+.list-item.active {
+    background: #2a2a2a;
+    border-left-color: #FF8C00;
+}
+
+.list-item.active h3 {
+    color: #FF8C00;
+}
+
+.item-info h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.item-info span {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+.icon-btn.delete {
+    background: transparent;
+    border: 1px solid crimson;
+    color: crimson;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 5px 7px;
+    border-radius: 50%;
+}
+
+.icon-btn.delete:hover {
+    color: #ffffff;
+    background: rgb(255, 0, 0);
+}
+
+/* Main Content Area */
+.main-section {
+    padding: 40px;
+    overflow-y: auto;
+    background-color: #121212;
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 20px;
+}
+
+.main-header h2 {
+    font-size: 2rem;
+    margin: 0;
+    color: white;
+}
+
+.subtitle {
+    color: #888;
+    margin: 5px 0 0;
+}
+
+.primary-btn {
+    background: #FF8C00;
+    color: white;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: 0.3s;
+    font-size: 30px;
+    font-family: cursive;
+}
+
+.primary-btn:hover {
+    background: #ff9f2e;
+    transform: translateY(-2px);
+}
+
+/* Student Cards Grid */
+.students-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.student-card {
+    background: #1E1E1E;
+    border-radius: 12px;
+    padding: 25px;
+    border: 1px solid #333;
+    transition: 0.3s;
+}
+
+.student-card:hover {
+    border-color: #555;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.student-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.student-card-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.profile-link {
+    background: transparent;
+    color: #FF8C00;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+}
+
+.profile-link:hover {
+    text-decoration: underline;
+    border-bottom: 1px solid orange;
+    transition: background-color 0.8s ease, transform 0.8s ease-in-out, transform 0.8s ease-in;
+    transform: scale(1.5);
+
+}
+
+.stats-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.stat-box {
+    background: #242424;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+.stat-value {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.stat-box.success .stat-value {
+    color: #4CAF50;
+}
+
+.stat-box.danger .stat-value {
+    color: #FF4444;
+}
+
+.card-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.action-btn.start {
+    flex: 1;
+    background: #FF8C00;
+    /* Asosiy rang */
+
+    color: black;
+    font-weight: bold;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.iconsG{
+    font-size: 100px;
+}
+
+
+.action-btn.start:hover {
+    background: white;
+}
+
+.action-btn.delete {
+    background: #2D2D2D;
+    border: none;
+    color: #FF4444;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 25px;
+}
+
+.action-btn.delete:hover {
+    background: #FF4444;
+    color: white;
+}
+
+/* Empty States */
+.empty-content,
+.no-selection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+    color: #555;
+    text-align: center;
+}
+
+.empty-icon,
+.illustration {
+    font-size: 60px;
+    margin-bottom: 20px;
+    opacity: 0.5;
+    color: #fff;
+}
+
+.no-selection h2,
+.empty-content h3 {
+    color: #ddd;
+    margin-bottom: 10px;
+}

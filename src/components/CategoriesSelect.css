@@ -1,0 +1,370 @@
+/* .categories-select-page {
+    background-color: #121212;
+    min-height: 100vh;
+    padding: 40px;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.webapp-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 20px;
+}
+
+.header-content h1 {
+    font-size: 2rem;
+    margin: 0;
+    color: #FF8C00;
+}
+
+.header-content p {
+    margin: 5px 0 0;
+    color: #B0B0B0;
+}
+
+.header-content strong {
+    color: #fff;
+}
+
+.back-btn {
+    background: transparent;
+    color: #B0B0B0;
+    border: 1px solid #333;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.back-btn:hover {
+    border-color: #FF8C00;
+    color: #FF8C00;
+}
+
+.categories-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.category-card {
+    background: #1E1E1E;
+    border-radius: 16px;
+    padding: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid #333;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    border-color: #FF8C00;
+    box-shadow: 0 10px 30px rgba(255, 140, 0, 0.15);
+}
+
+.card-icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+    background: rgba(255, 140, 0, 0.1);
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.category-card h3 {
+    margin: 0 0 15px 0;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.action-text {
+    color: #FF8C00;
+    font-weight: 600;
+    font-size: 0.9rem;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.category-card:hover .action-text {
+    opacity: 1;
+    transform: translateX(0);
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* CategoriesSelect.css */
+
+/* --- RANGLAR PALITRASI (Oldingi sahifa bilan bir xil) --- */
+:root {
+    --main-bg: #000000;
+    /* Asosiy fon - Qora */
+    --card-bg: #121212;
+    /* Karta foni - Yumshoq qora */
+    --accent-orange: #ff6b00;
+    /* Sabzi rang */
+    --accent-orange-hover: #e65100;
+    --text-white: #ffffff;
+    --text-grey: #b0b0b0;
+    --radius: 12px;
+    --shadow: 0 4px 20px rgba(255, 107, 0, 0.15);
+}
+
+body {
+    background-color: var(--main-bg);
+    font-family: 'Inter', sans-serif;
+    color: var(--text-white);
+    margin: 0;
+}
+
+/* --- ASOSIY KONTEYNER --- */
+.categories-select-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* --- HEADER QISMI --- */
+.webapp-header {
+    margin-bottom: 40px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 20px;
+}
+
+.back-btn {
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    color: var(--text-grey);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+    padding: 0;
+}
+
+.back-btn:hover {
+    color: var(--accent-orange);
+}
+
+.back-btn .icon {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.header-content h1 {
+    font-size: 28px;
+    margin: 0 0 10px 0;
+    color: var(--text-white);
+}
+
+.header-content p {
+    font-size: 16px;
+    color: var(--text-grey);
+    margin: 0;
+}
+
+/* Talaba ismini sabzi rang qilish */
+.header-content strong {
+    color: var(--accent-orange);
+    font-weight: 700;
+}
+
+/* --- KATEGORIYALAR GRID TIZIMI --- */
+.categories-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    padding-bottom: 40px;
+}
+
+/* --- KARTA DIZAYNI --- */
+.category-card {
+    background-color: var(--card-bg);
+    border: 1px solid #333;
+    border-radius: var(--radius);
+    padding: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Hover effekti: Ko'tarilish va sabzi rang ramka */
+.category-card:hover {
+    transform: translateY(-7px);
+    border-color: var(--accent-orange);
+    box-shadow: 0 10px 30px rgba(255, 107, 0, 0.1);
+}
+
+/* Hover bo'lganda icon orqasidagi fon */
+.category-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--accent-orange);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.category-card:hover::before {
+    opacity: 1;
+}
+
+.card-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Rasm/Icon dizayni */
+.card-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid var(--accent-orange);
+    padding: 5px;
+    margin-bottom: 20px;
+    background-color: rgba(255, 107, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Kategoriya nomi */
+.category-card h3 {
+    font-size: 20px;
+    margin: 0 0 15px 0;
+    color: var(--text-white);
+    font-weight: 600;
+}
+
+/* "Start Interview" yozuvi */
+.action-text {
+    font-size: 14px;
+    color: var(--text-grey);
+    font-weight: 500;
+    transition: color 0.3s;
+    border: 1px solid #333;
+    padding: 8px 16px;
+    border-radius: 20px;
+}
+
+.category-card:hover .action-text {
+    color: var(--accent-orange);
+    border-color: var(--accent-orange);
+    background-color: rgba(255, 107, 0, 0.1);
+}
+
+/* --- MOBILE RESPONSIVE --- */
+@media (max-width: 768px) {
+    .categories-select-page {
+        padding: 15px;
+    }
+
+    .header-content {
+        text-align: center;
+    }
+
+    .back-btn {
+        margin-bottom: 20px;
+    }
+
+    /* Mobil telefonda grid 2 qator bo'lishi mumkin yoki 1 */
+    .categories-container {
+        grid-template-columns: repeat(2, 1fr);
+        /* Yonma-yon 2 ta */
+        gap: 15px;
+    }
+
+    .category-card {
+        padding: 15px;
+    }
+
+    .card-icon {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 15px;
+    }
+
+    .category-card h3 {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .action-text {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+}
+
+/* Juda kichik ekranlar uchun (masalan iPhone SE) */
+@media (max-width: 480px) {
+    .categories-container {
+        grid-template-columns: 1fr;
+        /* Faqat bitta ustun */
+    }
+
+    .header-content h1 {
+        font-size: 24px;
+    }
+}

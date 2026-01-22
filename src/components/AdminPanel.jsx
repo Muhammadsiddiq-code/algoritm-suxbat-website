@@ -363,35 +363,25 @@ function AdminPanel() {
               ))}
             </div>
           </div>
-
           <div className="questions-section">
-            <h2>
-              {selectedCategory
-                ? `${selectedCategory.name} bo'limidagi savollar`
-                : "Bo'limni tanlang"}
-            </h2>
-
-            {selectedCategory && (
+            {selectedCategory ? (
               <>
+                <h2>{selectedCategory.name} - Savollar</h2>
                 <div className="add-question">
-                  <input
-                    type="text"
+                  <textarea
                     value={newQuestion}
                     onChange={(e) => setNewQuestion(e.target.value)}
-                    placeholder="Yangi savol"
+                    placeholder="Savol matni"
+                    rows="3"
                   />
-                  <button onClick={addQuestion}>Qo'shish</button>
+                  <button onClick={addQuestion}>Savol qo'shish</button>
                 </div>
 
                 <div className="questions-list">
-                  {questions.length === 0 && (
-                    <p>Bu bo‘limda hali savollar yo‘q</p>
-                  )}
-
                   {questions.map((q, index) => (
                     <div key={q.id} className="question-item">
                       <span>
-                        {index + 1}. {q.text}
+                        <strong>{index + 1}.</strong> {q.text}
                       </span>
                       <button onClick={() => deleteQuestion(q.id)}>
                         O'chirish
@@ -400,61 +390,89 @@ function AdminPanel() {
                   ))}
                 </div>
               </>
+            ) : (
+              <p className="select-prompt">Bo'limni tanlang</p>
             )}
           </div>
         </div>
       )}
 
       {activeTab === "teachers" && (
-        <div className="admin-container">
-          <div className="teachers-section">
-            <h2>O'qituvchilar</h2>
-
-            <div className="create-teacher">
+        <div className="teachers-container">
+          <div className="create-teacher-section">
+            <h2>Yangi o'qituvchi yaratish</h2>
+            <div className="teacher-form">
               <input
                 type="text"
-                placeholder="To'liq ism"
                 value={newTeacher.fullName}
                 onChange={(e) =>
                   setNewTeacher({ ...newTeacher, fullName: e.target.value })
                 }
+                placeholder="To'liq ism"
               />
               <input
                 type="text"
-                placeholder="Login"
                 value={newTeacher.login}
                 onChange={(e) =>
                   setNewTeacher({ ...newTeacher, login: e.target.value })
                 }
+                placeholder="Login"
               />
               <input
                 type="password"
-                placeholder="Parol"
                 value={newTeacher.password}
                 onChange={(e) =>
                   setNewTeacher({ ...newTeacher, password: e.target.value })
                 }
+                placeholder="Parol"
               />
-              <button onClick={createTeacher}>Yaratish</button>
+              <button onClick={createTeacher}>O'qituvchi yaratish</button>
             </div>
+          </div>
 
-            <div className="teachers-list">
-              {teachers.length === 0 && <p>O‘qituvchilar yo‘q</p>}
-
-              {teachers.map((t, index) => (
-                <div key={t.id} className="teacher-item">
-                  <span>
-                    {index + 1}. {t.fullName} ({t.login})
-                  </span>
-                  <button onClick={() => deleteTeacher(t.id)}>O'chirish</button>
-                </div>
-              ))}
-            </div>
+          <div className="teachers-list-section">
+            <h2>Barcha o'qituvchilar ({teachers.length})</h2>
+            {teachers.length === 0 ? (
+              <p className="no-data">Hozircha o'qituvchilar yo'q</p>
+            ) : (
+              <table className="teachers-table">
+                <thead>
+                  <tr>
+                    <th>№</th>
+                    <th>To'liq ism</th>
+                    <th>Login</th>
+                    <th>Yaratilgan sana</th>
+                    <th>Amallar</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {teachers.map((teacher, index) => (
+                    <tr key={teacher.id}>
+                      <td>{index + 1}</td>
+                      <td>{teacher.fullName}</td>
+                      <td>{teacher.login}</td>
+                      <td>
+                        {new Date(teacher.createdAt).toLocaleDateString(
+                          "uz-UZ"
+                        )}
+                      </td>
+                      <td>
+                        <button
+                          className="delete-btn"
+                          onClick={() => deleteTeacher(teacher.id)}
+                        >
+                          O'chirish
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            )}
           </div>
         </div>
       )}
     </div>
   );
 }
-
 export default AdminPanel;

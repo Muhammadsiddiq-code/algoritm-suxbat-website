@@ -14,6 +14,9 @@ function QuizPage() {
   const [results, setResults] = useState([]);
   const [finished, setFinished] = useState(false);
 
+  alert("QUIZ PAGE ISHLAYAPTI");
+
+
   useEffect(() => {
     fetchQuestions();
   }, []);
@@ -56,7 +59,8 @@ function QuizPage() {
   };
 
   const finishQuiz = (finalResults) => {
-    setFinished(true);
+    setFinished(true); 4
+    console.log(finalResults);
   };
 
   const calculateResult = () => {
